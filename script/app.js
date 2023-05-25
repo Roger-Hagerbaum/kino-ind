@@ -1,20 +1,14 @@
 import express from "express";
 import { engine } from "express-handlebars";
 import { marked } from "marked"; 
-import { loadMovie, loadMovies } from "./movies.js";
+import { loadMovie ,loadMovies } from "./movies.js";
 
 const app = express();
 
-
 app.get("/", async(req,res) => {
-    res.render("./partials/index");
-});
-
-app.get("/movies", async(req,res) => {
     const movies = await loadMovies();
-    res.render("./partials/allMovies", { movies });
+    res.render("./partials/index", { movies });
 });
-
 app.get("/movies/:movieId", async(req, res) => {
  const movie = await loadMovie(req.params.movieId);
  if(movie) {

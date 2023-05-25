@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-const api = 'https://lernia-kino-cms.herokuapp.com/api/movies/';
+const api = 'https://plankton-app-xhkom.ondigitalocean.app/api/movies';
 
 export async function loadMovies() {
     const res = await fetch(api);
@@ -9,7 +9,8 @@ export async function loadMovies() {
 }
 
 export async function loadMovie(id) {
-    const res = await fetch(api + id);
+    const res = await fetch(api  +"/"+ id);
     const load = await res.json();
+    console.log(load);
     return load.data;
 }

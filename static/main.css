@@ -1,0 +1,14 @@
+body {
+    background:#00ffcb;
+}
+li {
+    list-style: none;
+}
+div {
+    width: 600px;
+    margin: auto;
+}
+img {
+    max-width: 60%;
+    height: auto;
+}

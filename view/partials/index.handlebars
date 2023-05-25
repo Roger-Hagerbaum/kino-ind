@@ -1,1 +1,11 @@
-<h1 id = "homeMain">Kino home</h1>
+<h1 id = "homeMain">Kino homea</h1>
+<div class="home">
+    {{#each movies }}
+        <li class="movList">
+            <a href="/movies/{{ this.id }}">
+                <img class="movImage" src=" {{{ this.attributes.image.url }}}" alt="">
+                <p class="movTitle">{{ this.attributes.title }} </p>
+            </a>
+        </li>
+    {{/each}}
+</div>
